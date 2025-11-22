@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>The Wax Museum - Museum collection</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body id="collection">
@@ -23,12 +24,26 @@
 
   <main class="container">
     <h2>Museum collection</h2>
-    <p>Selected items from our permanent collection.</p>
-    <ul>
-      <li>Figure 1 — Description</li>
-      <li>Figure 2 — Description</li>
-    </ul>
+    
+    <div class="collection-item">
+      <h3>Carnauba wax</h3>
+      <div class="item-images">
+        <div class="image-wrapper">
+          <img src="images/Carnauba-both-horizontal.jpg" alt="Carnauba wax horizontal" class="lightbox-image">
+        </div>
+        <div class="image-wrapper">
+          <img src="images/Carnauba-top-vertical.jpg" alt="Carnauba wax vertical" class="lightbox-image">
+        </div>
+      </div>
+      <p>Carnauba wax is a natural wax extracted from the leaves of the carnauba palm. It is known for its hardness and high melting point, making it ideal for various applications. This remarkable substance has been used for centuries in traditional crafts and continues to be valued in modern industries.</p>
+      <p>The sustainable harvesting of carnauba wax supports local communities in Brazil while providing a premium material for artisans and manufacturers worldwide.</p>
+    </div>
   </main>
+
+  <!-- Lightbox modal -->
+  <div id="lightbox" class="lightbox">
+    <img id="lightbox-image" src="" alt="">
+  </div>
 
   <footer class="container footer">
     <small>&copy; The Wax Museum</small>
@@ -40,6 +55,22 @@
       const path = location.pathname.split('/').pop() || 'index.html';
       links.forEach(a => { if (a.getAttribute('href') === path) a.classList.add('active'); });
       document.querySelector('.nav-toggle').addEventListener('click', ()=>document.querySelector('.nav').classList.toggle('open'));
+      
+      // Lightbox functionality
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImage = document.getElementById('lightbox-image');
+      const lightboxImages = document.querySelectorAll('.lightbox-image');
+      
+      lightboxImages.forEach(img => {
+        img.addEventListener('click', () => {
+          lightboxImage.src = img.src;
+          lightbox.classList.add('active');
+        });
+      });
+      
+      lightbox.addEventListener('click', () => {
+        lightbox.classList.remove('active');
+      });
     })();
   </script>
 </body>

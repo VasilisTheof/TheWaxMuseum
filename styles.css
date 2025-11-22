@@ -1,31 +1,60 @@
 /* Basic layout and navigation */
 :root{
   --bg:#fbf6ef; /* light parchment tone so PNG alpha looks natural */
-  --text:#222;
-  --accent:#8b5e34;
+  --text:#1a1a1a; /* charcoal black */
+  --accent:#6b4423; /* deep chocolate brown */
+  --accent-light:#d4a574; /* beeswax gold */
+  --link:#b8860b; /* dark goldenrod */
+  --link-hover:#8b7355; /* taupe brown */
   --muted:#666;
+  --ribbon:#2d2d2d; /* dark gray */
 }
-*{box-sizing:border-box}
-.body-textured{ }
+
 body{font-family:Segoe UI, Roboto, Arial, sans-serif;margin:0;color:var(--text);background:var(--bg);background-image:radial-gradient(rgba(0,0,0,0.01) 1px, transparent 1px);background-size:18px 18px}
+/* Heading styles */
+h1,h2,h3,h4,h5,h6{color:var(--accent);margin:1.5rem 0 1rem 0;font-weight:700}
+h1{font-size:2rem}
+h2{font-size:1.75rem}
+h3{font-size:1.5rem}
+h4{font-size:1.25rem}
+h5{font-size:1.1rem}
+h6{font-size:1rem}
 .container{max-width:1000px;margin:0 auto;padding:1rem}
 .header-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem}
-.logo{margin:0;font-size:1.25rem;color:var(--accent)}
+.logo{margin:0;font-size:2rem;color:var(--accent);font-family:'Playfair Display',serif;font-weight:700}
 .nav{display:flex;gap:0.75rem}
 .nav a{display:inline-block;padding:0.5rem 0.6rem;color:var(--text);text-decoration:none;border-radius:4px}
 .nav a:hover{background:#f3f3f3}
-.nav a.active{background:var(--accent);color:#fff}
+.nav a.active{background:var(--accent-light);color:#fff}
 .nav-toggle{display:none;background:transparent;border:0;font-size:1.25rem}
 .hero{padding:2rem 0}
 /* Centered image and intro text for "What is wax?" section */
 .what-is-wax{padding:1.5rem 0;border-top:1px solid #f0e9e3;margin-top:1rem}
-.hero-image{text-align:center;margin:0.75rem 0}
-.hero-image img{max-width:90%;height:auto;display:block;margin:0 auto}
-.hero-image img[alt]{}
-.intro-text{max-width:760px;margin:0.75rem auto;color:var(--text);line-height:1.55}
+.hero-image{text-align:center;margin:0.75rem 0;max-width:40ch;margin-left:auto;margin-right:auto}
+.hero-image img{max-width:100%;height:auto;display:block;margin:0 auto}
+.intro-text{max-width:760px;margin:0.75rem auto;color:var(--text);line-height:1.55;margin-top:2rem}
 .intro-text p{margin:0.75rem 0}
+/* Links page styling */
+.links-list{margin-top:2rem}
+.link-item{margin-bottom:2rem;padding-bottom:1.5rem;border-bottom:1px solid #e8dfd6}
+.link-item p{margin:0 0 0.75rem 0;color:var(--text)}
+.link-item strong{color:var(--accent)}
+.link-item a{color:var(--link);text-decoration:none;font-weight:500}
+.link-item a:hover{color:var(--link-hover);text-decoration:underline}
+/* Collection page styling */
+.collection-item{margin:2rem 0;padding:2rem 0;border-bottom:2px solid #e8dfd6}
+.collection-item h3{margin-top:0}
+.item-images{display:flex;gap:1.5rem;margin:1.5rem 0;flex-wrap:wrap}
+.image-wrapper{flex:1;min-width:250px;overflow:hidden}
+.lightbox-image{width:100%;height:300px;object-fit:cover;display:block;cursor:pointer;border-radius:6px;transition:transform 0.2s}
+.lightbox-image:hover{transform:scale(1.02)}
+.image-wrapper:nth-child(2) .lightbox-image{object-position:center 50%}
+/* Lightbox modal */
+.lightbox{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.85);z-index:1000;align-items:center;justify-content:center;padding:2rem}
+.lightbox.active{display:flex}
+.lightbox img{max-width:90vw;max-height:90vh;object-fit:contain}
 /* Black ribbon section - 17 lines tall */
-.black-ribbon{background-color:#333;width:100vw;height:calc(17 * 1.5rem);margin-left:calc(-50vw + 50%);position:relative}
+.black-ribbon{background-color:var(--ribbon);width:100vw;height:calc(17 * 1.5rem);margin-left:calc(-50vw + 50%);position:relative}
 /* Bee wax background section */
 .beeswax-section{width:100%;min-height:500px;background-size:cover;background-position:center;background-attachment:fixed;margin-top:calc(3 * 1.5rem);display:flex;align-items:center;justify-content:center;padding:2rem;background-color:#fbf6ef}
 .beeswax-content{display:flex;gap:2rem;max-width:900px;width:100%;align-items:center;flex-direction:row}
