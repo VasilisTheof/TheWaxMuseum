@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>The Wax Museum - Museum collection</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body id="collection">
+  <header>
+    <div class="container header-inner">
+      <h1 class="logo">The Wax Museum</h1>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="travelling.html">Travelling exhibitions</a>
+        <a href="waxstories.html">Wax stories</a>
+        <a href="collection.html">Museum collection</a>
+        <a href="links.html">Interesting links</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2>Museum collection</h2>
+    <p>Selected items from our permanent collection.</p>
+    <ul>
+      <li>Figure 1 — Description</li>
+      <li>Figure 2 — Description</li>
+    </ul>
+  </main>
+
+  <footer class="container footer">
+    <small>&copy; The Wax Museum</small>
+  </footer>
+
+  <script>
+    (function(){
+      const links = document.querySelectorAll('nav a');
+      const path = location.pathname.split('/').pop() || 'index.html';
+      links.forEach(a => { if (a.getAttribute('href') === path) a.classList.add('active'); });
+      document.querySelector('.nav-toggle').addEventListener('click', ()=>document.querySelector('.nav').classList.toggle('open'));
+    })();
+  </script>
+</body>
+</html>

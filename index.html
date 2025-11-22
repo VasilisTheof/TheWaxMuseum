@@ -1,1 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>The Wax Museum - Home</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body id="home">
+	<header>
+		<div class="container header-inner">
+			<h1 class="logo">The Wax Museum</h1>
+			<nav class="nav">
+				<a href="index.html">Home</a>
+				<a href="travelling.html">Travelling exhibitions</a>
+				<a href="waxstories.html">Wax stories</a>
+				<a href="collection.html">Museum collection</a>
+				<a href="links.html">Interesting links</a>
+			</nav>
+			<button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+		</div>
+	</header>
+
+	<main class="container">
+		<section class="hero">
+			<h2>Welcome to The Wax Museum</h2>
+			<p>Explore stories about wax, and the step by step building of a museum</p>
+		</section>
+
+		<section class="what-is-wax">
+			<div class="hero-image">
+				<img src="images/what-is-wax.png" alt="What is wax?" loading="lazy">
+			</div>
+			<div class="intro-text">
+				<p>It turns out this is not as simple a question as you might think. As is often the case, the journey is worth more than the destination. Check to see if you know what wax is.</p>
+				<p>This website documents the progress towards making The Wax Museum a reality. If you are a fan already, you will find some interesting information and excellent stories by browsing around.</p>
+				<p>If you are sceptical about the concept, welcome. I hope you will enjoy this exploration as much as I do.</p>
+			</div>
+		</section>
+	</main>
+
+	<section class="black-ribbon"></section>
+
+	<section class="beeswax-section" style="background-image:url('images/bee-wax-hexagonal-background.jpg')">
+		<div class="beeswax-content">
+			<div class="beeswax-column">
+				<h3>Bee(n) there done that.</h3>
+				<p>Bees have been around for a while. Only a small portion of the bee species currently alive make wax.</p>
+			</div>
+			<div class="beeswax-column">
+				<img src="images/Stingless-bee-3-peru_2014-07-30.jpg" alt="Stingless bee from Peru" loading="lazy">
+			</div>
+		</div>
+	</section>
+
+	<footer class="container footer">
+		<small>&copy; The Wax Museum</small>
+	</footer>
+
+	<script>
+		(function(){
+			// highlight active link
+			const links = document.querySelectorAll('nav a');
+			const path = location.pathname.split('/').pop() || 'index.html';
+			links.forEach(a => { if (a.getAttribute('href') === path) a.classList.add('active'); });
+
+			// simple mobile toggle
+			const btn = document.querySelector('.nav-toggle');
+			const nav = document.querySelector('.nav');
+			btn.addEventListener('click', () => nav.classList.toggle('open'));
+		})();
+	</script>
+</body>
+</html>
 To be completed
